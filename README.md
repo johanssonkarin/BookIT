@@ -2,64 +2,27 @@
 
 BookIT is a cross-platform smartphone application providing a system for booking rooms. The purpose of the application is to create a simple way for a group of people to coordinate their schedules and spaces. The app was developed for a bachelor thesis project by three engineering students attending Uppsala University. 
 
-## Getting Started
+## Repository navigation
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+### app
+Contains the different JavaScript-files generating the application content. At top level general application files are found and then folder is further devided into subfolders:
 
-### Prerequisites
+* config - The navigation files.
+* components - Well yes, the different components built and used. Calendars, agendas, buttons...
+* screens - All different screens divided into subfolders after the tab-navigation structure. 
 
-What things you need to install the software and how to install them
+### ios
+At the moment the application is tested and developed for mainly for iOS. This folder contain the platform specific files e.g. app icon, launch screen etc.  
 
-```
-Give examples
-```
 
-### Installing
+### android
+Contains the basic android specific files to be able to run the app.  
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [ReactNative](http://www.reactnative.com/) - Front-end
-* [Google Firestore](https://firebase.google.com/products/firestore/) - Back-end
+* [ReactNative](http://www.reactnative.com/) - Used for front-end
+* [Google Firestore](https://firebase.google.com/products/firestore/) - Used for back-end
 
 
 ## Authors
@@ -71,9 +34,3 @@ Add additional notes about how to deploy this on a live system
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
