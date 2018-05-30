@@ -103,6 +103,7 @@ export default class ProfileAgenda extends Component {
         renderItem={this.renderItem.bind(this)}
         renderEmptyDate={this.renderEmptyDate.bind(this)}
         rowHasChanged={this.rowHasChanged.bind(this)}
+        firstDay={1} //week starts on monday instead of sunday
         theme={{
             backgroundColor: GREY1,
             textSectionTitleColor: GREEN,

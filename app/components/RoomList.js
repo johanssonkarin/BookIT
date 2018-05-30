@@ -159,7 +159,7 @@ export default class RoomList extends React.Component {
                             <ListItem
                                 title ={`${item.title}`}
                                 titleStyle = {styles.availableRoomsText }
-                                subtitle = {'Rummet är ledigt'}
+                                subtitle = {'Är ledigt'}
                                 onPress = {() => this.props.sendScreenInfo(item)}>
                             </ListItem>
                         }

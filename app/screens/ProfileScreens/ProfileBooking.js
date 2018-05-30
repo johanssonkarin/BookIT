@@ -2,7 +2,7 @@ import React from 'react';
 import firebase from 'react-native-firebase';
 import { StyleSheet, Platform, Image, Text, TextInput, TouchableOpacity, View, Button, Alert } from 'react-native';
 import moment from 'moment/min/moment-with-locales';
-import {WHITE,TABBAR_GREY, GREY1, BACKGROUND_GREY, GREEN, RED} from '../../styles';
+import {WHITE,TABBAR_GREY, GREY1, BACKGROUND_GREY, GREEN, RED, GREY2, theWindow} from '../../styles';
 
 export default class ProfileBooking extends React.Component {
   constructor(props){
@@ -39,26 +39,23 @@ export default class ProfileBooking extends React.Component {
     render() {
       return (
         <View style={ styles.mainContainer}>
-            <Text style= {styles.bookingInfo}>
-            {this.state.booking.info}{'\n'}
-            {this.state.booking.date}{'\n'}
-            {this.state.booking.time}{'\n'}
-            {this.state.booking.room}{'\n'}
+        <View style= {styles.bookingInfoContainer}>
             
-            </Text>
-            <View style={styles.editButtonContainer}>
-              <Button 
-              title={'Ändra'} 
-              onPress={() => alert('ändra')}
-              color = {WHITE}/>
-            </View> 
+            
+            <Text style= {styles.bookingDate}>Datum: {this.state.booking.date}</Text>
+            <Text style= {styles.bookingTime}>Tid: {this.state.booking.time}</Text>
+            <Text style= {styles.bookingRoom}>Rum: {this.state.booking.room}</Text>
+            <Text style= {styles.bookingInfo}>{this.state.booking.info}</Text>
+            
 
-            <View style={styles.cancelButtonContainer}>
-              <Button 
-              title={'Avboka'} 
-              onPress={() => this.cancel()}
-              color = {WHITE}/>
             </View> 
+            <TouchableOpacity onPress={() => alert('ändra')} style={styles.editButtonContainer}>
+            <Text style={styles.buttonTextStyle}>Ändra</Text>
+            </TouchableOpacity> 
+
+            <TouchableOpacity onPress={() => this.cancel()} style={styles.cancelButtonContainer}>
+              <Text style={styles.buttonTextStyle}>Avboka</Text>
+            </TouchableOpacity> 
         </View>  
     );
   }
@@ -72,14 +69,46 @@ export default class ProfileBooking extends React.Component {
       alignItems: 'center',
       backgroundColor: BACKGROUND_GREY,
     },
-    bookingInfo:{
+    bookingTime:{
         color: WHITE,
-        fontSize: 18,
-        alignSelf: 'center',
+        fontSize: 14,
+        fontWeight: 'bold',
+      //  alignSelf: 'center',
+        textAlign: 'left',
+        paddingBottom:5,
+    },
+    bookingDate:{
+      color: WHITE,
+      fontSize: 16,
+      fontWeight: 'bold',
+    //  alignSelf: 'center',
+      textAlign: 'left',
+      paddingBottom:5,
+    },
+    bookingRoom:{
+        color: WHITE,
+        fontSize: 14,
+        textAlign: 'left',
+        paddingBottom:15,
+    },
+    bookingInfo:{
+      color: WHITE,
+      fontSize: 14,
+      alignSelf: 'center',
+      fontStyle: 'italic',
+      textAlign: 'center',
+      paddingBottom:5,
+    },
+    bookingInfoContainer:{
+      backgroundColor: GREY2,
+      padding: 10,
+      textAlign: 'left',
+      alignItems: 'flex-start',
+      width: theWindow.width -120, 
     },
     editButtonContainer: {
-      backgroundColor: 'orange',
-      marginTop: 200,
+      backgroundColor: '#f4bc56',
+      marginTop: 150,
       borderRadius: 20,
       width: 250,
       padding: 1,
@@ -93,5 +122,9 @@ export default class ProfileBooking extends React.Component {
       padding: 1,
       alignItems: 'center',
     },
-
+    buttonTextStyle: {
+      color: WHITE,
+      paddingTop: 10,
+      paddingBottom: 10,
+    }, 
   });

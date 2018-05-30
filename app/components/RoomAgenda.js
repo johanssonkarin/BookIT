@@ -94,6 +94,7 @@ export default class RoomAgenda extends Component {
         renderItem={this.renderItem.bind(this)}
         renderEmptyDate={this.renderEmptyDate.bind(this)}
         rowHasChanged={this.rowHasChanged.bind(this)}
+        firstDay={1} //week starts on monday instead of sunday
         theme={{
             backgroundColor: GREY1,
             textSectionTitleColor: GREEN,
@@ -184,8 +185,8 @@ import {LocaleConfig} from 'react-native-calendars';
 LocaleConfig.locales['sv'] = {
   monthNames: ['Januari','Februari','Mars','April','Maj','Juni','Juli','Augusti','September','Oktober','November','December'],
   monthNamesShort: ['Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sept','Okt','Nov','Dec'],
-  dayNames: ['Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag','Söndag'],
-  dayNamesShort: ['Mån','Tis','Ons','Tors','Fre','Lör','Sön']
+  dayNames: ['Tisdag','Onsdag','Torsdag','Fredag','Lördag','Söndag', 'Måndag'],
+  dayNamesShort: ['Sön','Mån','Tis','Ons','Tors','Fre','Lör',]
 };
 
 LocaleConfig.defaultLocale = 'sv';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Platform, Image, Text, TextInput, TouchableOpacity, View, Button, Alert, KeyboardAvoidingView} from 'react-native';
 import firebase from 'react-native-firebase';
-import {TABBAR_GREY,GREEN, WHITE, GREY1, BACKGROUND_GREY, RED} from '../../styles';
+import {TABBAR_GREY,GREEN, WHITE, GREY1, BACKGROUND_GREY, RED, GREY2, theWindow} from '../../styles';
 
 
 export default class BookingOverview extends React.Component {
@@ -15,7 +15,7 @@ export default class BookingOverview extends React.Component {
           startTime: this.props.navigation.state.params.startTime,
           endTime: this.props.navigation.state.params.endTime,
           title:'',
-          descripton: '',
+          description: '',
           loading: true,
           isDone: false,
           firstname: '',
@@ -54,7 +54,7 @@ export default class BookingOverview extends React.Component {
           room: this.state.room,
           roomID: chosenRoom,
           owner: thisUser,
-          descripton: this.state.descripton,
+          description: this.state.description,
           date: this.state.date,
           ownerName: thisUserName,
           startTime: this.state.startTime,
@@ -65,7 +65,7 @@ export default class BookingOverview extends React.Component {
             title: this.state.title,
             room: this.state.room,
             roomID: chosenRoom,
-            descripton: this.state.descripton,
+            description: this.state.description,
             date: this.state.date,
             startTime: this.state.startTime,
             endTime: this.state.endTime,
@@ -73,7 +73,7 @@ export default class BookingOverview extends React.Component {
           refRoom.doc(doc.id).set({
             title: this.state.title,
             owner: thisUser,
-            descripton: this.state.descripton,
+            description: this.state.description,
             bookingID: doc.id,
             date: this.state.date,
             startTime: this.state.startTime,
@@ -97,13 +97,17 @@ export default class BookingOverview extends React.Component {
         style={styles.mainContainer}
         behavior="padding"
         >
-        <View style={ styles.textContainer }>
-          <Text style= {styles.infoText }>
-            Rum: {this.state.room} {'\n'}
-            Datum: {this.state.date} {'\n'}
-            Tid: {this.state.startTime} - {this.state.endTime}
-          </Text>
-          </View>
+         <View style= {styles.bookingInfoContainer}>
+            
+            
+            <Text style= {styles.bookingDate}>Rum: {this.state.room}</Text>
+            <Text style= {styles.bookingTime}>Datum: {this.state.date}</Text>
+            <Text style= {styles.bookingRoom}>Tid: {this.state.startTime} - {this.state.endTime}</Text>
+            
+            
+
+            </View>
+        
 
         <View style={styles.formContainer}>
         <TextInput
@@ -121,8 +125,8 @@ export default class BookingOverview extends React.Component {
                 autoCorrect={true}
                 placeholderTextColor= {TABBAR_GREY}
                 placeholder= 'Egen kommentar'
-                value={this.state.descripton}
-                onChangeText={descripton => this.setState({ descripton })}
+                value={this.state.description}
+                onChangeText={description => {this.setState({ description })}}
                 style={styles.inputStyle}
             />
         </View>
@@ -182,4 +186,39 @@ export default class BookingOverview extends React.Component {
     notSelected: {
       backgroundColor: GREY1,
     },
+    bookingTime:{
+      color: WHITE,
+      fontSize: 14,
+      fontWeight: 'bold',
+    //  alignSelf: 'center',
+      textAlign: 'left',
+      paddingBottom:5,
+  },
+  bookingDate:{
+    color: WHITE,
+    fontSize: 18,
+    fontWeight: 'bold',
+  //  alignSelf: 'center',
+    textAlign: 'left',
+    paddingBottom:5,
+  },
+  bookingRoom:{
+      color: WHITE,
+      fontSize: 14,
+      textAlign: 'left',
+  },
+  bookingInfo:{
+    color: WHITE,
+    fontSize: 14,
+    alignSelf: 'center',
+    fontStyle: 'italic'
+    //textAlign: 'left',
+  },
+  bookingInfoContainer:{
+    backgroundColor: GREY2,
+    padding: 10,
+    textAlign: 'left',
+    alignItems: 'flex-start',
+    width: theWindow.width -150, 
+  },
   });

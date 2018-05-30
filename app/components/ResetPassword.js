@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import { StyleSheet, ScrollView, Image, Text, View, Button, Alert, TouchableOpacity } from 'react-native';
 import firebase from 'react-native-firebase'
-import {GREEN, WHITE} from '../styles';
+import {GREEN, WHITE, GREY2} from '../styles';
 
 export default class ResetPassword extends Component{
 
@@ -32,7 +32,8 @@ export default class ResetPassword extends Component{
     render(){
     return(
         <View >
-        <TouchableOpacity onPress={ () => {this.onResetPress()}}> 
+        <TouchableOpacity onPress={ () => {this.onResetPress()}}
+        style= {styles.buttonContainer}> 
         <Text style= {styles.buttonTextStyle}> Byt lösenord </Text> 
         </TouchableOpacity>
         </View>
@@ -45,5 +46,18 @@ const styles = StyleSheet.create({
         color: WHITE,
         paddingTop: 10,
         paddingBottom: 10,
+    }, 
+    buttonContainer: {
+        backgroundColor: GREY2,
+        borderColor: WHITE,
+        borderWidth: 1,
+        marginTop: 20,
+        borderRadius: 20,
+        width: 250,
+        height: 40,
+        padding: 1,
+        alignSelf: 'center',
+        alignItems: 'center',
+        justifyContent:'center'
     },
 });

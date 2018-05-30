@@ -14,12 +14,11 @@ constructor(props){
   render(){
     return(
         <View style={ styles.mainContainer}>
-            <View style= {styles.buttonContainer}>
+            
             <ResetPassword/>
-            </View>
-            <View style= {styles.buttonContainer}>
+            
             <LogoutButton/>
-            </View>
+            
         </View>
  ); }
 }
@@ -31,17 +30,5 @@ constructor(props){
       alignItems: 'center',
       backgroundColor: BACKGROUND_GREY,
     },
-    buttonContainer: {
-      backgroundColor: GREY2,
-      borderColor: WHITE,
-      borderWidth: 1,
-      marginTop: 20,
-      borderRadius: 20,
-      width: 250,
-      height: 40,
-      padding: 1,
-      alignSelf: 'center',
-      alignItems: 'center',
-      justifyContent:'center'
-    },
+    
   });

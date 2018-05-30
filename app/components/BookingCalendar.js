@@ -50,7 +50,7 @@ export default class BookingCalendar extends Component {
           hideExtraDays
           markedDates={{[this.state.selected]: {selected: true, disableTouchEvent: true, selectedDotColor: 'orange'}}}
           displayLoadingIndicator
-         // firstDay={1} //week starts on monday instead of sunday
+          firstDay={1} //week starts on monday instead of sunday
 
           theme={{
             calendarBackground: GREY2,

@@ -39,7 +39,7 @@ class GetMyBookings extends React.Component {
         .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             const roomName = doc.get('room');
-            const information = doc.get('information');
+            const information = doc.get('description');
             const bookingTitle = doc.get('title');
             const bookingStart = doc.get('startTime');
             const bookingEnd = doc.get('endTime');
@@ -181,7 +181,7 @@ const styles = {
         maxHeight: 450,
     },
     currentBookingsFlatList:{
-        backgroundColor: BACKGROUND_GREY
+        backgroundColor: BACKGROUND_GREY,
     },
     item: {
       flex: 1,
