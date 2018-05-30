@@ -5,7 +5,7 @@ BookIT is a cross-platform smartphone application providing a system for booking
 ## Repository navigation
 
 ### app
-Contains the different JavaScript-files generating the application content. At top level general application files are found and then folder is further devided into subfolders:
+Contains the different JavaScript-files generating the application content. At top level, general application files are found and then the folder is further devided into subfolders:
 
 * config - The navigation files.
 * components - Well yes, the different components built and used. Calendars, agendas, buttons...
