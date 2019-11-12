@@ -11,7 +11,7 @@ Contains the different JavaScript-files generating the application content. At t
 * components - Well yes, the different components built and used. Calendars, agendas, buttons...
 * screens - All different screens divided into subfolders after the tab-navigation structure. 
 
-### ios
+### iOS
 At the moment the application is tested and developed for mainly for iOS. This folder contain the platform specific files e.g. app icon, launch screen etc.  
 
 
