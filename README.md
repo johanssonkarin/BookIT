@@ -1,6 +1,6 @@
 # BookIT <img src="https://github.com/johanssonkarin/BookIT/blob/master/app/images/icon.png" width="150" height="150" align="middle" />
 
-BookIT is a cross-platform smartphone application providing a system for booking rooms. The purpose of the application is to create a simple way for a group of people to coordinate their schedules and spaces. The app was developed for a bachelor thesis project by three engineering students attending Uppsala University. 
+BookIT is a cross-platform smartphone application providing a system for booking rooms. The purpose of the application is to create a simple way for a group of people to coordinate their schedules and spaces. The app was developed for a bachelor thesis project by three engineering students attending Uppsala University. A detailed description about the development process as well as the app itself can be found in the [thesis.](https://github.com/johanssonkarin/BookIT/blob/master/Thesis%20-%20BookIT.pdf)
 
 ## Repository navigation
 
